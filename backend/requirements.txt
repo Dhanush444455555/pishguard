@@ -1,0 +1,8 @@
+# PhishGuard AI — Backend Dependencies
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-dotenv
+httpx
+tldextract
