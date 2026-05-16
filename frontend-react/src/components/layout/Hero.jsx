@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ShieldAlert, Zap, Network, ChevronRight, Activity, Shield } from 'lucide-react'
+import UrlAnalyzerInput from '../scan/UrlAnalyzerInput.jsx'
 import './Hero.css'
 
 const features = [
@@ -10,6 +11,8 @@ const features = [
 ]
 
 export default function Hero() {
+  const navigate = useNavigate()
+
   return (
     <div className="hero">
       <div className="hero-glow" />
@@ -31,13 +34,8 @@ export default function Hero() {
           <strong>NeuralFlow Router</strong> to neutralize phishing campaigns before they breach your network.
         </motion.p>
 
-        <motion.div className="hero-ctas" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}>
-          <Link to="/scan" className="hero-cta-primary">
-            <ShieldAlert size={18} /> Initialize Scan <ChevronRight size={16} />
-          </Link>
-          <Link to="/dashboard" className="hero-cta-secondary">
-            <Activity size={18} /> View Dashboard
-          </Link>
+        <motion.div className="hero-search-container" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}>
+          <UrlAnalyzerInput onScan={(url) => navigate(`/scan?url=${encodeURIComponent(url)}`)} isScanning={false} />
         </motion.div>
       </div>
 

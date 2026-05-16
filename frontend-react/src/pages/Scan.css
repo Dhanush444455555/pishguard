@@ -1,6 +1,77 @@
-.scan-page { max-width: 1000px; margin: 0 auto; padding: 4rem 1.5rem; }
-.scan-header { text-align: center; margin-bottom: 3rem; }
-.scan-title-wrap { display: inline-flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
-.scan-title { font-size: 2rem; font-weight: 900; color: white; letter-spacing: -0.03em; margin: 0; }
-.scan-subtitle { color: #64748b; font-size: 1rem; max-width: 560px; margin: 0 auto; line-height: 1.7; }
-.scan-subtitle strong { color: #94a3b8; }
+.scan-page {
+  position: relative;
+  min-height: calc(100vh - 70px);
+  padding: 4rem 1.5rem;
+  overflow: hidden;
+}
+
+/* Background Cyber Grid */
+.scan-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(79, 172, 254, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 172, 254, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+  pointer-events: none;
+  perspective: 1000px;
+  transform-origin: bottom;
+  animation: grid-move 20s linear infinite;
+}
+
+.scan-page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 0%, #0b0f19 80%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes grid-move {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(40px); }
+}
+
+.scan-content-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.scan-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.scan-title-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.scan-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -0.03em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.scan-subtitle {
+  color: #64748b;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.scan-subtitle strong {
+  color: #4facfe;
+  font-weight: 600;
+}

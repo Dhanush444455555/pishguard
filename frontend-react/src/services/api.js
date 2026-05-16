@@ -78,9 +78,9 @@ export async function scanUrl(url) {
   try {
     const res = await api.post('/scan', { url })
     return res.data
-  } catch {
-    await new Promise(r => setTimeout(r, 2000))
-    return mockScan(url)
+  } catch (error) {
+    console.error("Scan failed:", error)
+    throw error
   }
 }
 
@@ -88,26 +88,28 @@ export async function getSystemStatus() {
   try {
     const res = await api.get('/system-status')
     return res.data
-  } catch {
-    return mockStatus
+  } catch (error) {
+    console.error("Failed to fetch system status:", error)
+    throw error
   }
 }
 
 export async function getThreatHistory() {
   try {
     const res = await api.get('/threat-history')
-    return res.data?.history || mockHistory
-  } catch {
-    return mockHistory
+    return res.data?.history || []
+  } catch (error) {
+    console.error("Failed to fetch threat history:", error)
+    return []
   }
 }
 
 export async function getSimilarThreats(url) {
   try {
     const res = await api.post('/similar-threats', { url })
-    return res.data?.similar_threats || mockSimilar
-  } catch {
-    await new Promise(r => setTimeout(r, 800))
-    return mockSimilar
+    return res.data?.similar_threats || []
+  } catch (error) {
+    console.error("Failed to fetch similar threats:", error)
+    return []
   }
 }
