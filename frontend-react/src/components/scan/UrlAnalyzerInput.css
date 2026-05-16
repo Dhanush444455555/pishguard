@@ -1,0 +1,8 @@
+.scan-input-wrapper { width: 100%; max-width: 800px; margin: 0 auto; position: relative; }
+.scan-input-glow { position: absolute; inset: -2px; border-radius: 0.875rem; background: linear-gradient(135deg, rgba(79,172,254,0.4), rgba(139,92,246,0.4), rgba(0,242,254,0.4)); filter: blur(4px); opacity: 0.6; z-index: 0; }
+.scan-input-inner { position: relative; z-index: 1; display: flex; align-items: center; background: #131a2a; border: 1px solid #1e293b; border-radius: 0.75rem; padding: 0.75rem 1rem; gap: 0.75rem; }
+.scan-input-field { flex: 1; background: transparent; border: none; outline: none; color: white; font-size: 1rem; font-family: inherit; }
+.scan-input-field::placeholder { color: #475569; }
+.scan-input-btn { flex-shrink: 0; display: flex; align-items: center; gap: 0.5rem; padding: 0.625rem 1.5rem; border-radius: 0.5rem; background: rgba(79,172,254,0.15); border: 1px solid rgba(79,172,254,0.5); color: #4facfe; font-weight: 700; cursor: pointer; font-size: 0.9rem; font-family: inherit; transition: all 0.2s; }
+.scan-input-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.scan-input-btn:not(:disabled):hover { background: rgba(79,172,254,0.25); }

@@ -1,0 +1,18 @@
+.dashboard-page { max-width: 1200px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+.dashboard-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+.dashboard-title { font-size: 1.75rem; font-weight: 900; color: white; letter-spacing: -0.03em; margin: 0; }
+.dashboard-subtitle { color: #64748b; margin-top: 0.25rem; font-size: 0.9rem; }
+.dashboard-status { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 0.5rem; background: #131a2a; border: 1px solid #1e293b; }
+.dashboard-status-dot { position: relative; display: flex; align-items: center; }
+.dashboard-status-dot .ping { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: #10b981; opacity: 0.6; animation: ping 1.5s cubic-bezier(0,0,0.2,1) infinite; }
+.dashboard-status-dot .dot { width: 10px; height: 10px; border-radius: 50%; background: #10b981; position: relative; }
+.dashboard-status-text { font-size: 0.8rem; font-weight: 700; color: white; letter-spacing: 0.06em; margin-left: 0.5rem; }
+.dashboard-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.kpi-card { background: #131a2a; border: 1px solid #1e293b; border-radius: 1rem; padding: 1.5rem; }
+.kpi-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
+.kpi-label { font-size: 0.8rem; color: #64748b; font-weight: 600; margin: 0; }
+.kpi-icon-wrap { padding: 0.5rem; border-radius: 0.5rem; }
+.kpi-value { font-size: 2rem; font-weight: 900; font-family: 'JetBrains Mono', monospace; color: white; letter-spacing: -0.02em; }
+.kpi-sub { display: flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem; }
+.kpi-sub-text { font-size: 0.75rem; color: #10b981; }
+.dashboard-charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; }

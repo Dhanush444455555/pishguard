@@ -1,0 +1,16 @@
+.history-page { max-width: 1000px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+.history-header { border-bottom: 1px solid #1e293b; padding-bottom: 1.5rem; margin-bottom: 2rem; }
+.history-title { display: flex; align-items: center; gap: 0.75rem; font-size: 1.75rem; font-weight: 900; color: white; letter-spacing: -0.03em; margin: 0; }
+.history-subtitle { color: #64748b; margin-top: 0.5rem; font-size: 0.9rem; }
+.history-table-container { background: #131a2a; border: 1px solid #1e293b; border-radius: 1rem; overflow: hidden; }
+.history-table { width: 100%; border-collapse: collapse; }
+.history-th { background: rgba(11,15,25,0.7); border-bottom: 1px solid #1e293b; padding: 0.875rem 1.25rem; text-align: left; font-size: 0.75rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.08em; }
+.history-tr { border-bottom: 1px solid rgba(30,41,59,0.5); }
+.history-td { padding: 1rem 1.25rem; }
+.history-date { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: #64748b; }
+.history-url { color: white; font-size: 0.9rem; font-weight: 500; word-break: break-all; }
+.history-risk-wrap { display: flex; align-items: center; gap: 0.5rem; }
+.history-risk-score { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: white; }
+.history-risk-score span { color: #475569; }
+.history-status-badge { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.7rem; font-family: 'JetBrains Mono', monospace; font-weight: 700; letter-spacing: 0.08em; background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.25); color: #ef4444; }
+.history-empty { padding: 3rem; text-align: center; color: #475569; }

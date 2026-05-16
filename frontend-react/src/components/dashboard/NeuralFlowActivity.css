@@ -1,0 +1,9 @@
+.neuralflow { background: #131a2a; border: 1px solid #1e293b; border-radius: 1rem; padding: 1.5rem; }
+.neuralflow-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+.neuralflow-title { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 1.05rem; color: white; }
+.neuralflow-badge { font-size: 0.7rem; padding: 0.25rem 0.6rem; border-radius: 9999px; background: rgba(0,242,254,0.08); border: 1px solid rgba(0,242,254,0.2); color: #00f2fe; font-weight: 600; }
+.neuralflow-chart { height: 200px; }
+.neuralflow-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-top: 1rem; }
+.neuralflow-tier { background: rgba(11,15,25,0.6); border: 1px solid #1e293b; border-radius: 0.5rem; padding: 0.875rem; text-align: center; }
+.neuralflow-tier-label { font-size: 0.7rem; color: #64748b; margin-bottom: 0.25rem; }
+.neuralflow-tier-value { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: white; font-size: 0.9rem; }

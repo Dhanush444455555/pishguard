@@ -1,0 +1,129 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  border-bottom: 1px solid #1e293b;
+  background: rgba(11,15,25,0.8);
+  backdrop-filter: blur(20px);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.navbar-logo-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: rgba(0,242,254,0.1);
+  border: 1px solid rgba(0,242,254,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-logo-text {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.navbar-logo-text span {
+  color: #4facfe;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.navbar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #94a3b8;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.navbar-link:hover {
+  color: white;
+  background: rgba(30,41,59,0.5);
+}
+
+.navbar-link.active {
+  color: #4facfe;
+  background: rgba(79,172,254,0.08);
+}
+
+.navbar-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #4facfe;
+  box-shadow: 0 0 8px rgba(79,172,254,0.6);
+}
+
+.navbar-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  background: rgba(16,185,129,0.08);
+  border: 1px solid rgba(16,185,129,0.25);
+}
+
+.navbar-status-dot {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-status-dot .ping {
+  position: absolute;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #10b981;
+  opacity: 0.75;
+  animation: ping 1.5s cubic-bezier(0,0,0.2,1) infinite;
+}
+
+.navbar-status-dot .dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #10b981;
+  position: relative;
+}
+
+.navbar-status-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #10b981;
+  letter-spacing: 0.08em;
+}

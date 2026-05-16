@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+/* ── Theme Tokens ─────────────────────────────────────────── */
+@theme {
+  --color-cyber-base: #0b0f19;
+  --color-cyber-panel: #131a2a;
+  --color-cyber-border: #1e293b;
+  --color-cyber-cyan: #4facfe;
+  --color-cyber-blue: #00f2fe;
+  --color-cyber-purple: #8b5cf6;
+  --color-cyber-green: #10b981;
+  --color-cyber-red: #ef4444;
+  --color-cyber-warning: #f59e0b;
+  --color-foreground: #e2e8f0;
+  --color-muted: #64748b;
+  --color-border: #1e293b;
+}
+
+/* ── Base ──────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--color-cyber-base);
+  color: var(--color-foreground);
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(79,172,254,0.3);
+  color: white;
+}
+
+/* ── Utilities ─────────────────────────────────────────────── */
+.cyber-grid-bg {
+  background-image:
+    linear-gradient(to right, #1e293b 1px, transparent 1px),
+    linear-gradient(to bottom, #1e293b 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.glass-panel {
+  background: rgba(19,26,42,0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid #1e293b;
+  border-radius: 0.75rem;
+}
+
+.text-glow { text-shadow: 0 0 10px rgba(79,172,254,0.5); }
+.box-glow  { box-shadow: 0 0 15px rgba(79,172,254,0.2); }
+
+/* ── Animations ────────────────────────────────────────────── */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes ping {
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
+
+.animate-pulse-slow { animation: pulse-slow 2s ease-in-out infinite; }
+.animate-ping       { animation: ping 1.5s cubic-bezier(0,0,0.2,1) infinite; }

@@ -1,0 +1,19 @@
+.scan-progress { max-width: 800px; margin: 3rem auto 0; background: #131a2a; border: 1px solid #1e293b; border-radius: 1rem; padding: 2rem; }
+.scan-progress-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; }
+.scan-progress-title { font-weight: 700; font-size: 1.1rem; color: white; }
+.scan-progress-steps { display: flex; flex-direction: column; gap: 1.5rem; }
+.scan-step { display: flex; align-items: center; gap: 1rem; }
+.scan-step-icon { width: 2.5rem; height: 2.5rem; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.4s; }
+.scan-step-icon.done { border: 2px solid #4facfe; background: rgba(79,172,254,0.15); }
+.scan-step-icon.active { border: 2px solid #4facfe; }
+.scan-step-icon.pending { border: 2px solid #334155; }
+.scan-step-body { flex: 1; }
+.scan-step-label { font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
+.scan-step-label.done, .scan-step-label.active { color: white; }
+.scan-step-label.pending { color: #475569; }
+.scan-step-bar { height: 3px; border-radius: 9999px; background: #1e293b; overflow: hidden; margin-top: 0.5rem; }
+.scan-step-fill { height: 100%; background: #4facfe; box-shadow: 0 0 8px rgba(79,172,254,0.6); }
+.scan-step-status { font-size: 0.75rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; min-width: 4rem; text-align: right; letter-spacing: 0.06em; }
+.scan-step-status.done { color: #10b981; }
+.scan-step-status.active { color: #4facfe; }
+.scan-step-status.pending { color: #334155; }
