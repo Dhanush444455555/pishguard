@@ -40,16 +40,16 @@ export default function History() {
               <motion.tr key={item.id} className="history-tr"
                 initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.08 }}
               >
-                <td className="history-td history-date">{item.date}</td>
+                <td className="history-td history-date">{new Date(item.scanned_at).toLocaleDateString()}</td>
                 <td className="history-td history-url">{item.url}</td>
                 <td className="history-td">
                   <div className="history-risk-wrap">
-                    {riskIcon(item.risk)}
-                    <span className="history-risk-score">{item.risk}<span>/100</span></span>
+                    {riskIcon(item.risk_score)}
+                    <span className="history-risk-score">{item.risk_score}<span>/100</span></span>
                   </div>
                 </td>
                 <td className="history-td">
-                  <span className="history-status-badge">{item.status}</span>
+                  <span className="history-status-badge">{item.threat_level}</span>
                 </td>
               </motion.tr>
             ))}

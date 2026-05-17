@@ -54,18 +54,18 @@ export default function Similar() {
           </p>
           <div className="similar-results-list">
             {results.map((r, i) => (
-              <motion.div key={r.id} className="similar-result-card"
+              <motion.div key={r.url} className="similar-result-card"
                 initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: i * 0.08 }}
               >
                 <div>
                   <p className="similar-result-url">{r.url}</p>
                   <div className="similar-result-meta">
-                    <span className="similar-result-date">First seen: {r.date}</span>
+                    <span className="similar-result-date">First seen: {new Date(r.scanned_at).toLocaleDateString()}</span>
                     <span className="similar-result-level">{r.threat_level}</span>
                   </div>
                 </div>
                 <div className="similar-result-score-wrap">
-                  <div className="similar-result-score">{(r.similarity * 100).toFixed(1)}%</div>
+                  <div className="similar-result-score">{(r.similarity_score * 100).toFixed(1)}%</div>
                   <div className="similar-result-label">SIMILARITY</div>
                 </div>
               </motion.div>

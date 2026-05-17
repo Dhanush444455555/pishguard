@@ -39,28 +39,28 @@ export default function ThreatCard({ result }) {
       <div className="threat-card-body">
         <div>
           <h3 className="threat-card-section-title"><Terminal size={16} color="#8b5cf6" /> AI Reasoning Explanation</h3>
-          <p className="threat-card-explanation">{result.ai_explanation || 'No detailed reasoning provided.'}</p>
+          <p className="threat-card-explanation">{result.explainability?.summary || result.ai_explanation || 'No detailed reasoning provided.'}</p>
           <div className="threat-card-engines">
-            {result.engines_used?.map((e) => (
-              <span key={e} className="threat-card-engine-tag">{e}</span>
-            ))}
+            <span className="threat-card-engine-tag">NeuralFlow: {result.routing?.tier_name || 'Standard'}</span>
+            <span className="threat-card-engine-tag">Sentinel Memory Core</span>
+            <span className="threat-card-engine-tag">ML Ensemble</span>
           </div>
         </div>
         <div>
           <h3 className="threat-card-section-title"><Activity size={16} color="#4facfe" /> Detected Anomalies</h3>
           <div className="threat-card-anomalies">
-            {result.threat_intelligence?.anomalies?.map((a, i) => (
+            {(result.anomalies || result.threat_intelligence?.anomalies)?.map((a, i) => (
               <div key={i} className="threat-card-anomaly">
-                {a.impact === 'Critical'
+                {a.impact === 'critical' || a.impact === 'Critical'
                   ? <AlertTriangle size={16} color="#ef4444" style={{ flexShrink: 0, marginTop: 2 }} />
                   : <Info size={16} color="#f59e0b" style={{ flexShrink: 0, marginTop: 2 }} />}
                 <div>
                   <p className="threat-card-anomaly-title">{a.title}</p>
-                  <p className="threat-card-anomaly-desc">{a.desc}</p>
+                  <p className="threat-card-anomaly-desc">{a.description || a.desc}</p>
                 </div>
               </div>
             ))}
-            {(!result.threat_intelligence?.anomalies?.length) && (
+            {!(result.anomalies?.length || result.threat_intelligence?.anomalies?.length) && (
               <p className="threat-card-empty">No structural anomalies detected.</p>
             )}
           </div>

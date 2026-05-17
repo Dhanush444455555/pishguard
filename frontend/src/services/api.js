@@ -97,7 +97,7 @@ export async function getSystemStatus() {
 export async function getThreatHistory() {
   try {
     const res = await api.get('/threat-history')
-    return res.data?.history || []
+    return res.data?.records || []
   } catch (error) {
     console.error("Failed to fetch threat history:", error)
     return []
@@ -106,8 +106,8 @@ export async function getThreatHistory() {
 
 export async function getSimilarThreats(url) {
   try {
-    const res = await api.post('/similar-threats', { url })
-    return res.data?.similar_threats || []
+    const res = await api.get('/similar-threats', { params: { url } })
+    return res.data?.matches || []
   } catch (error) {
     console.error("Failed to fetch similar threats:", error)
     return []
